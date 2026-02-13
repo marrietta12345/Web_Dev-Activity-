@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusCraft</title>
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f8;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            padding: 15px;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        section.hero {
+            text-align: center;
+            padding:  20px;
+            margin: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #333;
+            gap: 50px;
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #266e66;
+
+        }
+
+        .products {
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-left: 6%;
+           
+        }
+
+        .products-list {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product-item{
+            text-align: center;
+        }
+        .product-item img {
+            width: 25%;
+            margin-bottom: 10px;
+            margin-left: 8px;
+            vertical-align: top;
+        }
+        
+        .add-to-cart {
+            background-color: #333;
+            font-weight: 300;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
+            margin-left: 9%;
+            margin-bottom: 2%;
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            color: rgb(0, 0, 0);
+            margin-bottom: 10px;
+            margin-left: 10%;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            margin-top: 10px;
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+            left: 0;
+
+        }
+
+
+    </style>
+        
+</head>
+
+<body>
+    <nav>
+          <div class="logo">CampusCraft</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    </nav>
+    
+    <section class="hero">
+        <h1>Welcome to CampusCraft</h1>
+        <P>We are committed to making education easier, organized, and fun—because every great idea starts with the right tool</P>
+    </section>
+    
+    <Section class ="products">
+        <h1>Our Products</h1>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="12-watercolor-art-ideas-fb.png" alt="Planner Icon" width="300">
+                <h2>Watercolor </h2>
+                <p class="price">$300</p>
+                <button class="add-to-cart">Add to Cart</button>
+            
+            <div class="product-item"></div>
+                <img src="images.jpeg" alt="Planner Icon" width="300">
+                <h2>NoteBook </h2>
+                <p class="price">$100</p>
+                <button class="add-to-cart">Add to Cart</button>
+                
+            </div>
+
+            <div class="footer">
+                <p>&copy; 2024 CampusCraft. All rights reserved.</p>
+            </div>
+</body>
+</html>
