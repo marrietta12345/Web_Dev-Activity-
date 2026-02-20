@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marrieta P. Ramirez | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            color: #333;
+            line-height: 1.6;
+            /* Ensure footer doesn't feel cramped */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: #4e73df;
+            font-size: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin-left: 20px;
+            color: #333;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #1cc88a;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 10%;
+            color: white;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            margin: 10px 10px 10px 0;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #4e73df;
+        }
+
+        .btn-primary:hover {
+            background: #4e73df;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1cc88a;
+            transform: translateY(-3px);
+        }
+
+        /* SECTION GENERAL */
+        .section {
+            background: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #4e73df;
+        }
+
+        .section-subtitle {
+            margin-bottom: 50px;
+            color: #666;
+        }
+
+        /* PROJECT SECTION */
+        .projects-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #f8f9fc;
+            padding: 30px;
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 40px;
+            color: #1cc88a;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* CONTACT SECTION STYLES */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 600px; /* Centering the info boxes */
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 5px solid #4e73df;
+        }
+
+        .info-box i {
+            font-size: 20px;
+            color: #4e73df;
+            width: 30px;
+            text-align: center;
+        }
+
+        /* FOOTER FIX */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #222;
+            color: white;
+            margin-top: auto; /* Pushes footer to bottom */
+            width: 100%;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            margin: 0 15px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #1cc88a;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header { padding: 20px; flex-direction: column; }
+            nav { margin-top: 15px; }
+            .hero { padding: 60px 5%; text-align: center; }
+            .hero-text h2 { font-size: 32px; }
+            .contact-container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Hello, I'm <br>Marrieta P. Ramirez</h2>
+            <p>A passionate Web Developer specializing in modern, responsive, and user-friendly digital experiences.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">Explore Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="6997662.png" alt="Marrieta Ramirez Avatar">
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-subtitle">A selection of my recent work and coding experiments.</p>
+        
+        <div class="projects-grid">
+            <div class="card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Project 1</h3>
+                <p>A clean, responsive personal brand website built with HTML5 and CSS3.</p>
+                <a href="#" class="btn btn-primary" style="padding: 8px 20px; margin-top: 15px;">Live Demo</a>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>Project 2</h3>
+                <p>Interactive dashboard UI focusing on user experience and accessibility.</p>
+                <a href="#" class="btn btn-primary" style="padding: 8px 20px; margin-top: 15px;">Live Demo</a>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h3>Project 3</h3>
+                <p>Mobile-first landing page for a creative agency with custom animations.</p>
+                <a href="#" class="btn btn-primary" style="padding: 8px 20px; margin-top: 15px;">Live Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact" style="background: #f8f9fc;">
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact-container">
+            <div style="width: 100%;">
+                <div class="info-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <p style="font-weight: bold; font-size: 14px; color: #4e73df;">Email</p>
+                        <p>marrpramirez@email.com</p>
+                    </div>
+                </div>
+
+                <div class="info-box" style="border-left-color: #1cc88a;">
+                    <i class="fa-solid fa-phone" style="color: #1cc88a;"></i>
+                    <div>
+                        <p style="font-weight: bold; font-size: 14px; color: #1cc88a;">Phone</p>
+                        <p>+63 912 345 6789</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <p style="font-weight: bold; font-size: 14px; color: #4e73df;">Location</p>
+                        <p>Philippines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2026 Marrieta P. Ramirez | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
