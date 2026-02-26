@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Marrieta P. Ramirez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #2563eb; 
+            --border: #f0f0f0;
+            --light-bg: #fafafa;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            scroll-behavior: smooth; 
+        }
+
+        body { 
+            background: var(--bg); 
+            color: var(--text-dark); 
+            -webkit-font-smoothing: antialiased; 
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; color: var(--text-dark); text-decoration: none; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); margin-left: 2rem; font-size: 0.9rem; font-weight: 600; transition: 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* HEADER */
+        .page-header {
+            padding: 80px 5% 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .page-header h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; margin: 20px 0; letter-spacing: -1.5px; }
+
+        /* FILTER BAR */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* PROJECTS GRID */
+        .projects-section {
+            padding: 0 5% 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card { 
+            border: 1px solid var(--border); 
+            border-radius: 16px; 
+            padding: 40px; 
+            transition: 0.4s ease; 
+            background: #fff;
+            border-top: 4px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Animation for filtering */
+        .project-card.hidden {
+            display: none;
+        }
+
+        .project-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .project-card span { font-size: 0.7rem; font-weight: 800; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; }
+        .project-card h3 { font-size: 1.5rem; font-weight: 800; margin: 10px 0 15px 0; }
+        .project-card p { color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
+        
+        .project-link {
+            text-decoration: none; 
+            font-weight: 700; 
+            color: var(--text-dark); 
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .project-link:hover { color: var(--accent); }
+
+        /* FOOTER */
+        footer { padding: 40px 5%; text-align: center; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+        .social-links { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: var(--text-muted); font-size: 1.2rem; transition: 0.3s; text-decoration: none; }
+        .social-links a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="portfolio.html" class="logo">MARRIETTA P. RAMIREZ</a>
+        <div class="nav-links">
+            <a href="portfolio.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html" style="color: var(--accent);">Project</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Selected Works</h1>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Work</button>
+            <button class="filter-btn" data-filter="web-apps">Web Apps</button>
+            <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+            <button class="filter-btn" data-filter="mobile">Mobile App</button>
+        </div>
+    </header>
+
+    <main class="projects-section">
+        <div class="grid" id="project-grid">
+            
+            <div class="project-card web-apps">
+                <div>
+                    <span>Web Development</span>
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-stack online store featuring real-time inventory, secure stripe payments, and an admin dashboard.</p>
+                </div>
+                <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card ui-ux">
+                <div>
+                    <span>UI/UX Design</span>
+                    <h3>Financial Dashboard</h3>
+                    <p>Designed a complex data visualization tool for crypto traders focusing on high readability and dark-mode aesthetics.</p>
+                </div>
+                <a href="#" class="project-link">View Figma File <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card mobile">
+                <div>
+                    <span>Mobile App</span>
+                    <h3>Health & Fitness Tracker</h3>
+                    <p>A cross-platform mobile application that helps users track their daily calories and workout routines.</p>
+                </div>
+                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card web-apps">
+                <div>
+                    <span>Web Development</span>
+                    <h3>Real Estate Portal</h3>
+                    <p>A property listing site with advanced filtering options and an integrated Google Maps API.</p>
+                </div>
+                <a href="#" class="project-link">View Live Demo <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2026 Marrietta P. Ramirez. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and add to clicked one
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        // Check if card contains the class matching the filter
+                        if (card.classList.contains(filterValue)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
